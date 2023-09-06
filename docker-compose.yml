@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    restart: on-failure
+    container_name: backend
+  nginx:
+    image: nginx
+    restart: on-failure
+    container_name: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
