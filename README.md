@@ -15,7 +15,7 @@ sudo service docker start
 sudo service docker status
 ```
 ```bash
-sudo usermod -aG docker ec2-user
+sudo usermod -aG docker $USER
 exit
 ssh . . .
 ```
